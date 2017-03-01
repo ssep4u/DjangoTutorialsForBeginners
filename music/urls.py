@@ -28,4 +28,8 @@ urlpatterns = [
     # /music/<album.id>/favorite
     # url(r'^(?P<album_id>[0-9]+)/favorite/$', views.favorite, name='favorite'),
 
+    # /music/album/add/
+    url(r'album/add/$', views.AlbumCreate.as_view(), name='album-add'),
+
+
 ]
