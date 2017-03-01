@@ -6,7 +6,18 @@
 {% if all_albums %}
     <ul>
         {% for album in all_albums %}
-            <li><a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a></li>
+            <li><a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a>
+                <a href="{% url 'music:album-update' album.id %}">
+                    <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-star"></span>
+                    </button>
+                </a>
+                <a href="{% url 'music:album-delete' album.id %}">
+                    <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </a>
+            </li>
         {% endfor %}
     </ul>
 {% else %}
